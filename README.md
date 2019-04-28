@@ -16,7 +16,7 @@ default (Minetest Game)
 License
 ---------
 
-Code: LGPL by xenonca  
+Code: LGPL 2.1 by xenonca  
 Media: CC-BY-SA 4.0 by xenonca
 
 
