@@ -71,17 +71,17 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "darks:darkpick 1",
 	recipe = {
-		{"darks:darksubstance"},{"dars:darksubstance"},{"dars:darksubstance"},
-		{""},{"default:steel_ingot"},{""},
-		{""},{"default:steel_ingot"},{""}
+		{"darks:darksubstance","darks:darksubstance","darks:darksubstance"},
+		{"","default:steel_ingot",""},
+		{"","default:steel_ingot",""}
 	}
 })
 
 minetest.register_craft({
 	output = "darks:darkaxe 1",
 	recipe = {
-		{"darks:darksubstance"},{"darks:darksubstance"},
-		{""},{"darks:darksubstance"},
-		{""},{"default:steel_ingot"}
+		{"darks:darksubstance","darks:darksubstance",""},
+		{"darks:darksubstance","default:steel_ingot",""},
+		{"","default:steel_ingot",""}
 	}
 })
