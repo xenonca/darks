@@ -57,6 +57,33 @@ minetest.register_tool("darks:darkaxe", {
 	},
 	sound = {breaks = "default_tool_breaks"},
 })
+
+minetest.register_tool("darks:darkshovel", {
+	description = "Dark Shovel",
+	inventory_image = "darkshovel.png",
+	wield_image = "darkshovel.png^[transformR90",
+	tool_capabilities = {
+		full_punch_interval = 0.9,
+		max_drop_level=1,
+		groupcaps={
+			crumbly = {times={[1]=1.00, [2]=0.40, [3]=0.20}, uses=100, maxlevel=5},
+		},
+		damage_groups = {fleshy=7},
+	},
+	sound = {breaks = "default_tool_breaks"},
+})
+
+if minetest.get_modpath("farming") then
+    farming.register_hoe("darks:darkhoe", {
+		description = "Dark Hoe",
+		inventory_image = "darkhoe.png",
+		max_uses = 1000,
+		groups = {not_in_creative_inventory = 1},
+		damage_groups = {fleshy=7},
+	})
+	
+    end
+
 --- Registering Recipes
 
 minetest.register_craft({
@@ -83,5 +110,23 @@ minetest.register_craft({
 		{"darks:darksubstance","darks:darksubstance",""},
 		{"darks:darksubstance","default:steel_ingot",""},
 		{"","default:steel_ingot",""}
+	}
+})
+
+minetest.register_craft({
+	output = "darks:darkshovel 1",
+	recipe = {
+		{"", "darks:darksubstance", ""},
+		{"", "default:steel_ingot", ""},
+		{"", "default:steel_ingot", ""}
+	}
+})
+
+minetest.register_craft({
+	output = "darks:darkhoe 1",
+	recipe = {
+		{"darks:darksubstance", "darks:darksubstance", ""},
+		{"", "default:steel_ingot", ""},
+		{"", "default:steel_ingot", ""}
 	}
 })
