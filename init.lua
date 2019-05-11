@@ -19,6 +19,8 @@ minetest.override_item("default:obsidian", {drop = {
 minetest.register_tool("darks:darksword", {
 	description = "Dark Sword",
 	inventory_image = "darksword.png",
+	groups = {not_in_creative_inventory=1},
+	range = 7,
 	tool_capabilities = {
 		full_punch_interval = 0.5,
 		max_drop_level=1,
@@ -32,10 +34,12 @@ minetest.register_tool("darks:darksword", {
 
 minetest.register_tool("darks:darkpick", {
     description = "Dark Pickaxe",
-    inventory_image = "darkpick.png",
+	inventory_image = "darkpick.png",
+	groups = {not_in_creative_inventory=1},
+	range = 7,
     tool_capabilities = {
         full_punch_interval = 0.8,
-        max_drop_level=3,
+		max_drop_level=3,
         groupcaps= {
             cracky={times={[1]=4.00, [2]=1.50, [3]=0.10}, uses=100, maxlevel=5}
         },
@@ -46,10 +50,12 @@ minetest.register_tool("darks:darkpick", {
 
 minetest.register_tool("darks:darkaxe", {
     description = "Dark Axe",
-    inventory_image = "darkaxe.png",
+	inventory_image = "darkaxe.png",
+	groups = {not_in_creative_inventory=1},
+	range = 7,
     tool_capabilities = {
         full_punch_interval = 0.8,
-        max_drop_level=3,
+		max_drop_level=3,
         groupcaps={
 			choppy={times={[1]=2.00, [2]=0.80, [3]=0.40}, uses=100, maxlevel=5},
 		},
@@ -62,6 +68,8 @@ minetest.register_tool("darks:darkshovel", {
 	description = "Dark Shovel",
 	inventory_image = "darkshovel.png",
 	wield_image = "darkshovel.png^[transformR90",
+	groups = {not_in_creative_inventory=1},
+	range = 7,
 	tool_capabilities = {
 		full_punch_interval = 0.9,
 		max_drop_level=1,
@@ -79,10 +87,11 @@ if minetest.get_modpath("farming") then
 		inventory_image = "darkhoe.png",
 		max_uses = 1000,
 		groups = {not_in_creative_inventory = 1},
+		range = 7,
 		damage_groups = {fleshy=7},
 	})
 	
-    end
+end
 
 --- Registering Recipes
 
