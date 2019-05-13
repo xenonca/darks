@@ -22,5 +22,5 @@ Media: CC-BY-SA 4.0 by xenonca
 
 Version
 ---------
-v1.1 Addind Armor  
+v1.1 Adding Armor  
 v1.0 First Release
