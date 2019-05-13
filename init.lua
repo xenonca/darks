@@ -1,10 +1,20 @@
+--- Checking for 3D Armor/Shields
+
+if minetest.get_modpath("3d_armor") then
+	dofile(minetest.get_modpath("darks").."/darks_armor.lua")
+end
+
+if minetest.get_modpath("shields") then
+	dofile(minetest.get_modpath("darks").."/darks_shields.lua")
+end
+
 --- Registering Items/Tools
 
 minetest.register_craftitem("darks:darksubstance", {
     description = "Dark Subsance",
     inventory_image = "darksubstance.png",
     tiles = "darksubstance.png",
-    groups = {not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory=1},
 })
 
 minetest.override_item("default:obsidian", {drop = {
@@ -14,7 +24,6 @@ minetest.override_item("default:obsidian", {drop = {
             {items = {'default:obsidian'}},
             }
 }})
-
 
 minetest.register_tool("darks:darksword", {
 	description = "Dark Sword",
