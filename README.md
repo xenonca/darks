@@ -1,17 +1,22 @@
 Darks
 =========
 
-Adds dark stuff like the Dark Sword.
+Who knows?...
 
 Description
 -----------
-Dig obsidian and by chance you will get some Dark Substance with which you can craft Dark Tools.
+Adds some dark stuff... but what?
 
 
 Dependencies
 --------------
 default (Minetest Game)
 
+Optional Depends
+-----------------
+farming  
+3d_armor  
+shields
 
 License
 ---------
@@ -22,4 +27,5 @@ Media: CC-BY-SA 4.0 by xenonca
 
 Version
 ---------
-v1.0
+v1.1 ???  
+v1.0 First Release
