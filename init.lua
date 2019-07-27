@@ -224,6 +224,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "darks:darkstick 1",
+	recipe = {
+		{"", "", "darks:darksubstance"},
+		{"", "default:steel_ingot", ""},
+		{"default:steel_ingot", "", ""}
+	}
+})
+
+minetest.register_craft({
 	output = "darks:darkblock",
 	recipe = {
 		{"darks:darksubstance", "darks:darksubstance", "darks:darksubstance"},
