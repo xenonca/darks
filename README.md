@@ -27,5 +27,6 @@ Media: CC-BY-SA 4.0 by xenonca
 
 Version
 ---------
+v1.2 Added more dark stuff  
 v1.1 ???  
 v1.0 First Release

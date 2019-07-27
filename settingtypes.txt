@@ -1,0 +1,2 @@
+#Rarity of finding Dark Substance when digging obsidian (eg. if set to 50 you have a chance 1 out of 50)
+darksubstance_rarity (Dark Substance Rarity) int 50
