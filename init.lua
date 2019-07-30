@@ -7,6 +7,21 @@ ________      _____ __________ ____  __.  _________
         \/         \/       \/        \/        \/ 
 ]]--
 
+--- Checking for translation
+
+
+lavastuff = {}
+
+local S
+
+if minetest.get_translator ~= nil then
+    S = minetest.get_translator(minetest.get_current_modname())
+else
+    S = function(str)
+        return(str)
+    end
+end
+
 --- Checking for 3D Armor/Shields
 
 if minetest.get_modpath("3d_armor") then
@@ -17,39 +32,7 @@ if minetest.get_modpath("shields") then
 	dofile(minetest.get_modpath("darks").."/darks_shields.lua")
 end
 
---- Registering Items/Tools
-
-minetest.register_craftitem("darks:darksubstance", {
-    description = "Dark Subsance",
-    inventory_image = "darksubstance.png",
-    tiles = "darksubstance.png",
-	groups = {not_in_creative_inventory=1},
-	is_visible = false,
-	initial_properties = {time_to_live = 2},
-	range = 7,
-})
-
-minetest.override_item("default:obsidian", {drop = {
-    max_items = 1,
-    items = {
-            {items = {'darks:darksubstance'}, rarity = 50},
-            {items = {'default:obsidian'}},
-            }
-}})
-
-minetest.register_node("darks:darkblock", {
-	description = "Dark Block",
-	tiles = {"darkblock.png"},
-	is_ground_content = false,
-	groups = {not_in_creative_inventory=1, cracky=2, level=5},
-})
-
-minetest.register_node("darks:darkblock_r", {
-	description = "Dark Block Reinforced",
-	tiles = {"darkblock_r.png"},
-	is_ground_content = false,
-	groups = {not_in_creative_inventory=1, cracky=1, level=5},
-})
+--- Overriding Obsidian
 
 minetest.override_item("default:obsidian", {drop = {
     max_items = 1,
@@ -61,8 +44,34 @@ minetest.override_item("default:obsidian", {drop = {
             }
 }})
 
+--- Registering Items/Tools
+
+minetest.register_craftitem("darks:darksubstance", {
+    description = S("Dark Subsance"),
+    inventory_image = "darksubstance.png",
+    tiles = "darksubstance.png",
+	groups = {not_in_creative_inventory=1},
+	is_visible = false,
+	initial_properties = {time_to_live = 2},
+	range = 7,
+})
+
+minetest.register_node("darks:darkblock", {
+	description = S("Dark Block"),
+	tiles = {"darkblock.png"},
+	is_ground_content = false,
+	groups = {not_in_creative_inventory=1, cracky=2, level=5},
+})
+
+minetest.register_node("darks:darkblock_r", {
+	description = S("Dark Block Reinforced"),
+	tiles = {"darkblock_r.png"},
+	is_ground_content = false,
+	groups = {not_in_creative_inventory=1, cracky=1, level=5},
+})
+
 minetest.register_tool("darks:darksword", {
-	description = "Dark Sword",
+	description = S("Dark Sword"),
 	inventory_image = "darksword.png",
 	groups = {not_in_creative_inventory=1},
 	range = 7,
@@ -78,7 +87,7 @@ minetest.register_tool("darks:darksword", {
 })
 
 minetest.register_tool("darks:darkpick", {
-    description = "Dark Pickaxe",
+    description = S("Dark Pickaxe"),
 	inventory_image = "darkpick.png",
 	groups = {not_in_creative_inventory=1},
 	range = 7,
@@ -94,7 +103,7 @@ minetest.register_tool("darks:darkpick", {
 })
 
 minetest.register_tool("darks:darkaxe", {
-    description = "Dark Axe",
+    description = S("Dark Axe"),
 	inventory_image = "darkaxe.png",
 	groups = {not_in_creative_inventory=1},
 	range = 7,
@@ -110,7 +119,7 @@ minetest.register_tool("darks:darkaxe", {
 })
 
 minetest.register_tool("darks:darkshovel", {
-	description = "Dark Shovel",
+	description = S("Dark Shovel"),
 	inventory_image = "darkshovel.png",
 	wield_image = "darkshovel.png^[transformR90",
 	groups = {not_in_creative_inventory=1},
@@ -128,7 +137,7 @@ minetest.register_tool("darks:darkshovel", {
 
 if minetest.get_modpath("farming") then
     farming.register_hoe("darks:darkhoe", {
-		description = "Dark Hoe",
+		description = S("Dark Hoe"),
 		inventory_image = "darkhoe.png",
 		max_uses = 1000,
 		groups = {not_in_creative_inventory = 1},
@@ -139,7 +148,7 @@ if minetest.get_modpath("farming") then
 end
 
 minetest.register_tool("darks:darkstick", {
-	description = ("Dark Stick"),
+	description = S("Dark Stick"),
 	inventory_image = "darkstick.png",
 	wield_image = "darkstick.png^[transformR90",
 	groups = {not_in_creative_inventory=1},
