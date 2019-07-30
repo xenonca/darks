@@ -9,9 +9,6 @@ ________      _____ __________ ____  __.  _________
 
 --- Checking for translation
 
-
-lavastuff = {}
-
 local S
 
 if minetest.get_translator ~= nil then
