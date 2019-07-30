@@ -1,7 +1,19 @@
+--- Checking Translation
+
+local S
+
+if minetest.get_translator ~= nil then
+    S = minetest.get_translator(minetest.get_current_modname())
+else
+    S = function(str)
+        return(str)
+    end
+end
+
 --- Registering Armor
 
 minetest.register_tool("darks:dark_chestplate", {
-	description = "Dark Chestplate",
+	description = S("Dark Chestplate"),
 	inventory_image = "3d_armor_chestplate_dark.png",
     groups = {armor_torso=1, armor_heal=18, armor_use=20, armor_fire=1, not_in_creative_inventory=1},
     armor_groups = {fleshy =20},
@@ -10,7 +22,7 @@ minetest.register_tool("darks:dark_chestplate", {
 })
 
 minetest.register_tool("darks:dark_leggings", {
-	description = "Dark Leggings",
+	description = S("Dark Leggings"),
 	inventory_image = "3d_armor_leggings_dark.png",
     groups = {armor_legs=1, armor_heal=18, armor_use=20, armor_fire=1, not_in_creative_inventory=1},
     armor_groups = {fleshy =20},
@@ -19,7 +31,7 @@ minetest.register_tool("darks:dark_leggings", {
 })
 
 minetest.register_tool("darks:dark_boots", {
-	description = "Dark Boots",
+	description = S("Dark Boots"),
 	inventory_image = "3d_armor_boots_dark.png",
     groups = {armor_feet=1, armor_heal=18, armor_use=20,
         physics_speed=1.5, physics_jump=1, armor_fire=1, armor_fire=1, not_in_creative_inventory=1},
@@ -29,7 +41,7 @@ minetest.register_tool("darks:dark_boots", {
 })
 
 minetest.register_tool("darks:dark_helmet", {
-	description = "Dark Helmet",
+	description = S("Dark Helmet"),
 	inventory_image = "3d_armor_helmet_dark.png",
     groups = {armor_head=1, armor_heal=18, armor_use=20, armor_fire=1, not_in_creative_inventory=1},
     armor_groups = {fleshy =15},

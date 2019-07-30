@@ -9,9 +9,6 @@ ________      _____ __________ ____  __.  _________
 
 --- Checking for translation
 
-
-lavastuff = {}
-
 local S
 
 if minetest.get_translator ~= nil then
@@ -47,12 +44,11 @@ minetest.override_item("default:obsidian", {drop = {
 --- Registering Items/Tools
 
 minetest.register_craftitem("darks:darksubstance", {
-    description = S("Dark Subsance"),
+    description = S("Dark Substance"),
     inventory_image = "darksubstance.png",
     tiles = "darksubstance.png",
 	groups = {not_in_creative_inventory=1},
 	is_visible = false,
-	initial_properties = {time_to_live = 2},
 	range = 7,
 })
 
