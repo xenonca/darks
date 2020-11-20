@@ -35,7 +35,7 @@ minetest.override_item("default:obsidian", {drop = {
     max_items = 1,
     items = {
 			{items = {'darks:darksubstance'}, 
-				rarity = tonumber(minetest.settings:get("darksubstance_rarity")), -- default set to 50
+				rarity = tonumber(minetest.settings:get("darksubstance_rarity")) or 50, -- default set to 50
 				tools = {'default:pick_mese', 'default:pick_diamond', 'darks:darkpick', 'ethereal:pick_crystal'}},
             {items = {'default:obsidian'}},
             }
