@@ -166,7 +166,7 @@ minetest.register_tool("darks:darkstick", {
 		if sleep == 7  then
 			return
 		end
-				minetest.add_particlespawner({
+			minetest.add_particlespawner({
 				amount = 1000,
 				time = 7,
 				minpos = {x = tonumber(pointed_thing.above.x)+5, y = tonumber(pointed_thing.above.y), z = tonumber(pointed_thing.above.z)+5},
