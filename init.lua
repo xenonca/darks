@@ -11,7 +11,6 @@ ________      _____ __________ ____  __.  _________
 
 local S
 local sleep = 0
-local done = false
 
 if minetest.get_translator ~= nil then
     S = minetest.get_translator(minetest.get_current_modname())
