@@ -10,6 +10,8 @@ ________      _____ __________ ____  __.  _________
 --- Checking for translation
 
 local S
+local sleep = 0
+local done = false
 
 if minetest.get_translator ~= nil then
     S = minetest.get_translator(minetest.get_current_modname())
@@ -162,7 +164,10 @@ minetest.register_tool("darks:darkstick", {
 		if pointed_thing.above == nil then
 			return
 		end
-			minetest.add_particlespawner({
+		if sleep == 7  then
+			return
+		end
+				minetest.add_particlespawner({
 				amount = 1000,
 				time = 7,
 				minpos = {x = tonumber(pointed_thing.above.x)+5, y = tonumber(pointed_thing.above.y), z = tonumber(pointed_thing.above.z)+5},
@@ -176,8 +181,12 @@ minetest.register_tool("darks:darkstick", {
 				minsize = 5,
 				maxsize = 20,
 				texture = "darkness.png",
-				collisiondetection = false
+				collisiondetection = false,
+				minetest.after(7, function()
+					sleep = 0
+				end)
 			})
+			sleep = 7
 		end,
 
 })
